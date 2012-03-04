@@ -1,0 +1,109 @@
+@import "./partials/icons";
+
+body {
+    background-color: #f6f6f6;
+    background-image: -webkit-radial-gradient(circle, hsla(0,0%,0%,.05) 25%, hsla(0,0%,0%,.0) 25%);
+    background-image:    -moz-radial-gradient(circle, hsla(0,0%,0%,.05) 25%, hsla(0,0%,0%,.0) 25%);
+    background-image:         radial-gradient(circle, hsla(0,0%,0%,.05) 25%, hsla(0,0%,0%,.0) 25%);
+    background-size: 4px 4px;
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 100px 50px 50px;
+    text-align: center;
+}
+h1 {
+    color: #f66;
+    font: bold 48px/1 Quicksand, sans-serif;
+    margin-bottom: 32px;
+    text-shadow: 0 1px 0 #f6f6f6,
+                 0 3px 0 #ccc;
+}
+h2 {
+    color: #555;
+    font: bold 24px/1.8 Quicksand, sans-serif;
+    margin-bottom: 36px;
+    text-shadow: 0 1px 0 #f6f6f6,
+                 0 2px 0 #ccc;
+}
+p {
+    color: #777;
+    font: bold 16px/3 Quicksand, sans-serif;
+    margin-top: 30px;
+}
+p a {
+    border-bottom: 2px solid #fc6;
+    color: #777;
+    text-decoration: none;
+}
+p a:hover {
+    border-color: #f66;
+}
+a.icon {
+    margin: 12px;
+}
+
+/* Icon Base Styles */
+
+.newDoc { 
+  @include newDoc;
+}
+.mail { 
+  @include mail;
+}
+.contacts { 
+  @include contacts;
+}
+.calendar { 
+  @include calendar;
+}
+.clock { 
+  @include clock;
+}
+.flag { 
+  @include flag;
+}
+.add { 
+  @include add;
+}
+.subtract { 
+  @include subtract;
+}
+.tick { 
+  @include tick;
+}
+.cross { 
+  @include cross;
+}
+.user { 
+  @include user;
+}
+.chart { 
+  @include chart;
+}
+.heart { 
+  @include heart;
+}
+.prev { 
+  @include prev;
+}
+.next { 
+    @include next;
+}
+.batFull { 
+  @include batFull;
+}
+.batEmpty { 
+  @include batEmpty;
+}
+.play { 
+  @include play;
+}
+.pause { 
+  @include pause;
+}
+.stop { 
+  @include stop;
+}
+.eject { 
+  @include eject;
+}
