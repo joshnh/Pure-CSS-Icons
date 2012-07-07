@@ -1,0 +1,684 @@
+// Icon Base Styles
+
+$iconBackground:  #fed;
+$iconBorder:      #fc6;
+$iconHover:       #ffe;
+
+// we're not using %placeholders because of @silent confusion: http://j.mp/zBeBFl 
+
+.icon {
+    background-color: $iconBackground;
+    border: 2px solid $iconBorder;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.icon:after,
+.icon:before {
+    background: $iconBackground;
+    border: 2px solid $iconBorder;
+    content: '';
+    position: absolute;
+}
+.icon:hover,
+.icon:hover:after,
+.icon:hover:before {
+    background-color: $iconHover;
+}
+
+// New Document Icon
+
+@mixin newDoc { 
+      @extend .icon;
+      border-top: 2px solid $iconBorder;
+      box-shadow: inset 0 0 0 2px $iconBackground;
+      height: 15px;
+      top: 10px;
+      width: 20px;
+      &:hover {
+          box-shadow: inset 0 0 0 2px $iconHover;
+      }
+      &:after {
+        height: 10px;
+        right: 1px;
+        top: -9px;
+        width: 10px;
+        z-index: -1;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+      }
+      &:before {
+        border-bottom: none;
+        border-right: 2px solid $iconBorder;
+        height: 10px;
+        left: -2px;
+        top: -12px;
+        width: 11px;
+      }
+}
+
+// Previous Icon
+
+@mixin prev {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after,
+    &:before {
+      border-radius: 2px;
+      height: 0;
+      left: 5px;
+      width: 9px;
+    }
+    &:after {
+      bottom: 8px;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    &:before {
+    top: 8px;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    }
+}
+
+
+
+// Next Icon 
+
+@mixin next {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after,
+    &:before {
+      border-radius: 2px;
+      height: 0;
+      right: 5px;
+      width: 9px;
+    }
+    &:after {
+        top: 8px;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+    &:before {
+        bottom: 8px;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+    }
+}
+
+// Mail Icon
+
+@mixin mail {
+    @extend .icon;
+    height: 20px;
+    top: 4px;
+    width: 28px;
+    &:after,
+    &:before {
+        border-top: none;
+        top: 6px;
+        width: 13px;
+    }
+    &:after {
+        left: -2px;
+        -webkit-transform: rotate(25deg);
+           -moz-transform: rotate(25deg);
+            -ms-transform: rotate(25deg);
+             -o-transform: rotate(25deg);
+                transform: rotate(25deg);
+    }
+    &:before {
+        right: -2px;
+        -webkit-transform: rotate(-25deg);
+           -moz-transform: rotate(-25deg);
+            -ms-transform: rotate(-25deg);
+             -o-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+    }
+}
+
+// Contacts Icon 
+
+@mixin contacts {
+    @extend .icon;
+    border-left-width: 6px;
+    color: $iconBorder;
+    font: bold 12px/1 sans-serif;
+    height: 25px;
+    text-decoration: none;
+    width: 18px;
+    &:after,
+    &:before {
+        border: none;
+    }
+    &:after {
+        content: '@';
+        right: 3px;
+        top: 5px;
+    }
+}
+
+// Chart Icon 
+
+@mixin chart {
+    @extend .icon;
+    height: 20px;
+    margin-right: 30px;
+    top:5px;
+    width: 4px;
+    &:after,
+    &:before {
+        bottom: -2px;
+        width: 4px;
+    }
+    &:after {
+        height: 25px;
+        left: 8px;
+    }
+    &:before {
+        height: 15px;
+        left: 18px;
+    }
+}
+
+// Clock Icon
+
+@mixin clock {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after,
+    &:before {
+        border-left: none;
+        width: 0;
+    }
+    &:after {
+        height: 9px;
+        left: 12px;
+        top: 3px;
+    }
+    &:before {
+        height: 4px;
+        left: 15px;
+        top: 8px;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+}
+
+// Calendar Icon
+
+@mixin calendar {
+    @extend .icon;
+    height: 23px;
+    top: 2px;
+    width: 27px;
+    &:after {
+        bottom: 19px;
+        left: -2px;
+        right: -2px;
+        top: -2px;
+    }
+    &:before {
+        background: none;
+        border-bottom: none;
+        border-top: none;
+        border-width: 4px;
+        bottom: 23px;
+        left: 2px;
+        right: 2px;
+        top: -4px;
+    }
+    &:hover:before {
+        background: none;
+    }
+}
+
+// Folder Icon 
+
+@mixin folder {
+    @extend .icon;
+    height: 18px;
+    top: 6px;
+    width: 27px;
+    &:after {
+        border-bottom: none;
+        border-radius: 3px 3px 0 0;
+        height: 3px;
+        left: 1px;
+        top: -5px;
+        width: 10px;
+    }
+    &:before {
+        border: none;
+    }
+}
+
+// Add Icon 
+
+@mixin add {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after {
+        height: 16px;
+        left: 11px;
+        top: 3px;
+        width: 0;
+    }
+    &:before {
+        height: 0;
+        left: 3px;
+        top: 11px;
+        width: 16px;
+    }
+}
+
+// Subtract Icon
+
+@mixin subtract {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after {
+        height: 0;
+        left: 3px;
+        top: 11px;
+        width: 16px;
+    }
+    &:before {
+        border: none;
+    }
+}
+
+// Full Battery Icon 
+
+@mixin batFull {
+    @extend .icon;
+    height: 22px;
+    margin-left: 18px;
+    margin-right: 18px;
+    top: 3px;
+    width: 8px;
+    &:after {
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
+        top: 2px;
+    }
+    &:before {
+        height: 0;
+        left: 1px;
+        right: 1px;
+        top: -4px;
+    }
+}
+
+// Empty Battery Icon 
+
+@mixin batEmpty {
+    @extend .icon;
+    height: 22px;
+    margin-left: 18px;
+    margin-right: 18px;
+    top: 3px;
+    width: 8px;
+    &:after {
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
+        top: 16px;
+    }
+    &:before {
+        height: 0;
+        left: 1px;
+        right: 1px;
+        top: -4px;
+    }
+}
+
+// Tick Icon 
+
+@mixin tick {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after {
+        height: 14px;
+        left: 13px;
+        top: 5px;
+        width: 0;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        
+    }
+    &:before {
+        height: 0;
+        left: 4px;
+        top: 14px;
+        width: 2px;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+}
+
+// Cross Icon 
+
+@mixin cross {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after {
+        height: 0;
+        left: 3px;
+        top: 11px;
+        width: 16px;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+    &:before {
+        height: 0;
+        left: 3px;
+        top: 11px;
+        width: 16px;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+    }
+}
+
+// Eject Icon
+
+@mixin eject {
+    @extend .icon;
+    height: 4px;
+    top: 20px;
+    width: 26px;
+    &:after,
+    &:before,
+    &:hover:after,
+    &:hover:before {
+        background: none;
+    }
+    &:after {
+        border-bottom: 15px solid $iconBorder;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid transparent;
+        height: 0;
+        left: -2px;
+        top: -35px;
+        width: 0;
+    }
+    &:before {
+        border-bottom: 10px solid $iconBackground;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid transparent;
+        height: 0;
+        left: 3px;
+        top: -27px;
+        width: 0;
+        z-index: 1;
+    }
+    &:hover:before {
+        border-bottom-color: $iconHover;
+    }
+}
+
+// User Icon
+
+@mixin user {
+    @extend .icon;
+    border-radius: 10px 10px 0 0;
+    height: 6px;
+    top: 19px;
+    width: 26px;
+    &:after {
+        border-radius: 10px;
+        height: 17px;
+        left: 4px;
+        top: -20px;
+        width: 14px;
+    }
+    &:before {
+        border: none;
+        height: 10px;
+        left: 9px;
+        top: -9px;
+        width: 8px;
+        z-index: 1;
+    }
+}
+
+// Heart Icon
+
+@mixin heart {
+    @extend .icon;
+    border-radius: 100%;
+    height: 15px;
+    margin-right: 24px;
+    width: 15px;
+    &:after {
+        border-radius: 100%;
+        height: 15px;
+        left: 11px;
+        top: -2px;
+        width: 15px;
+        z-index: -1;
+    }
+    &:before {
+        border-left: none;
+        border-top: none;
+        height: 16px;
+        left: 5px;
+        top: 6px;
+        width: 16px;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+}
+// Play Icon 
+
+@mixin play {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after,
+    &:before,
+    &:hover:after,
+    &:hover:before {
+        background: none;
+    }
+    &:after {
+        border-bottom: 8px solid transparent;
+        border-left: 13px solid $iconBorder;
+        border-right: 13px solid transparent;
+        border-top: 8px solid transparent;
+        height: 0;
+        left: 8px;
+        top: 5px;
+        width: 0;
+    }
+    &:before {
+        border: none;
+    }
+}
+
+// Pause Icon 
+
+@mixin pause {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after,
+    &:before {
+        height: 10px;
+        top: 6px;
+        width: 0;
+    }
+    &:after {
+        left: 7px;
+    }
+    &:before {
+        left: 15px;
+    }
+}
+
+// Stop Icon 
+
+@mixin stop {
+    @extend .icon;
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    &:after {
+        background: $iconBorder;
+        height: 9px;
+        left: 7px;
+        top: 7px;
+        width: 8px;
+    }
+    &:hover:after {
+        background: $iconBorder;
+    }
+    &:before {
+        border: none;
+    }
+}
+
+// Flag Icon
+
+@mixin flag {
+    @extend .icon;
+    height: 25px;
+    margin-right: 35px;
+    width: 0;
+    &:after,
+    &:before {
+        height: 8px;
+        left: 0;
+        top: -2px;
+        width: 10px;
+    }
+    &:before {
+        left: 6px;
+        top: 2px;
+    }
+}
+
+// Home Icon
+
+@mixin home {
+    @extend .icon;
+    height: 10px;
+    top: 14px;
+    width: 20px;
+    &:after,
+    &:before,
+    &:hover:after,
+    &:hover:before {
+        background: none;
+    }
+    &:after {
+        border-bottom: 15px solid $iconBorder;
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        border-top: 15px solid transparent;
+        height: 0;
+        left: -6px;
+        top: -29px;
+        width: 0;
+    }
+    &:before {
+        border-bottom: 10px solid $iconBorder;
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 10px solid transparent;
+        height: 0;
+        left: -1px;
+        top: -21px;
+        width: 0;
+        z-index: 1;
+    }
+    &:hover:before {
+        border-bottom-color: $iconHover;
+    }
+}
+
+// Comment Icon
+
+@mixin comment {
+    @extend .icon;
+    border-radius: 4px;
+    height: 18px;
+    width: 26px;
+    &:after,
+    &:before {
+        background: none;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $iconBorder;
+        bottom: -14px;
+        height: 0;
+        left: 7px;
+        width: 0;
+    }
+    &:before {
+        border-top-color: $iconBorder;
+        bottom: -11px;
+        z-index: 1;
+    }
+    &:hover:after {
+        background: none;
+    }
+    &:hover:before {
+        background: none;
+        border-top-color: $iconHover;
+    }
+}
